@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 /**
  * @author Luis P Gonzalez
- *
+ * @author Diego Ruiz
  */
 public class radio {
 	private boolean FmOAm;//False indica que esta en Fm; True, Am.
@@ -13,7 +13,7 @@ public class radio {
 	/**
 	 * un constructor cualquiera
 	 */
-	public void radio() {
+	public radio() {
 		listaEmisorasFav = new ArrayList<emisoras>();
 		todasLasEmisoras = new ArrayList<emisoras>();
 		energia=false;
@@ -30,6 +30,12 @@ public class radio {
 	public void botonEncendido() {
 		energia = !energia;
 	}
+	public boolean getEstado() {
+    		return energia;
+  	}
+  	public emisoras getEmisoraEnReproduccion() {
+    		return emisoraEnReproduccion;
+  	}
 	/**
 	 * @param AdelanteOAtras tenes que ingresar 1 si el usuario desea avanzar en las emisoras, o
 	 * -1 si desea ir hacia atras; es importante que no ingreses otro numero pues de eso depende
@@ -65,9 +71,8 @@ public class radio {
 				return "Emisora "+ emisoraRegistrada.getNumeroDeEmisora()+" sintonizada";
 			}
 		}
-		emisoras LaNuevaEmisora = new emisoras(tipoDeEmisora, nuevaEstacion);
-		return "Emisora "+LaNuevaEmisora.getNumeroDeEmisora()+" sintonizada";
-
+		emisoraEnReproduccion.setNumeroDeEmisora(nuevaEstacion);
+		return "Emisora "+emisoraEnReproduccion.getNumeroDeEmisora()+" sintonizada";
 
 	}
 	/**
