@@ -124,12 +124,20 @@ public class radio {
 	 */
 	public String cambiarDeFmAAm() {
 		FmOAm = !FmOAm;
+		boolean hayEmisoraGuardada=false;  
 		String tipoDeRadio = FmOAm?"AM":"FM";
 			for(emisoras emi: todasLasEmisoras) {
 				if ((emi.getTipoDeEmisora()==tipoDeRadio)) {
 					emisoraEnReproduccion=emi;
+					hayEmisoraGuardada=true; 
 					break;
 				}
+			}
+			if(hayEmisoraGuardada==false) {
+				double noDeRadio; 
+				if(tipoDeRadio=="AM") noDeRadio=530;
+				else noDeRadio=87.9;
+				emisoras NuevaEmisora = new emisoras(tipoDeRadio, noDeRadio);
 			}
 
 		String res = FmOAm?"Frecuencia de busqueda cambiado de FM a AM":"Frecuencia de busqueda cambiado de AM a FM";
