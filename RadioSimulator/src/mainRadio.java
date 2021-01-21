@@ -1,7 +1,7 @@
 import java.util.Scanner;
 /**
  * @author Luis Gonzalez 
- * @author Diego Ruiz
+ * @author Diego Ruiz 
  *
  */
 public class mainRadio {
