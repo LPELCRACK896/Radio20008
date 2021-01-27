@@ -1,5 +1,14 @@
 import java.util.Scanner;
 /**
+ * REPOSITORIO GIT: https://github.com/LPELCRACK896/Radio20008.git
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
  * @author Luis Gonzalez 
  * @author Diego Ruiz 
  *

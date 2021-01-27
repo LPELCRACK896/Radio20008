@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * @author Luis P Gonzalez
  * @author Diego Ruiz
  */
-public class radio {
+public class radio implements RadioInterface{
 	private boolean FmOAm;//False indica que esta en Fm; True, Am.
 	private boolean energia;//False indica que esta apagado; True, encendido.
 	private emisoras emisoraEnReproduccion;
@@ -20,6 +20,14 @@ public class radio {
 		FmOAm =false;
 		emisoraEnReproduccion= new emisoras("FM", 87.9);
 
+	}
+	public int continuar() {
+		cambiarEmisora(1, 0);
+		return 1; 
+	} 
+	public int retroceder() {
+		cambiarEmisora(-1, 0);
+		return -1; 
 	}
 	/**
 	 * Con llamar este metodo el dispositivo pasa de encendido a apagado o viceversa.
